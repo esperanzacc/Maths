@@ -15,7 +15,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic) NSInteger wrongCount;
 
 - (instancetype)init;
-- (NSString *) scoreTrack: (long) right andWrong: (long) wrong;
+- (void) addRightCount;
+- (void) addWrongCount;
+- (NSString *) scoreTrack;
 
 @end
 

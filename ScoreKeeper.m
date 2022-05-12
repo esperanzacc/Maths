@@ -6,7 +6,6 @@
 //
 
 #import "ScoreKeeper.h"
-#import "InputHandler.h"
 
 @implementation ScoreKeeper
 
@@ -20,14 +19,23 @@
   return self;
 }
 
-- (NSString *) scoreTrack: (long) right andWrong: (long) wrong {
+- (void) addRightCount {
+  _rightCount = _rightCount + 1;
+}
+
+- (void) addWrongCount {
+  _wrongCount = _wrongCount + 1;
+}
+
+- (NSString *) scoreTrack {
   NSString *score;
-  float _right = [[NSNumber numberWithLong:right] floatValue];
-  float _wrong = [[NSNumber numberWithLong:wrong] floatValue];
-  float _percentage = (_right / (_right + _wrong)) * 100;
-  score = [NSString stringWithFormat:@"score: %li right, %li wrong ---- %ld percent", right, wrong, (long)_percentage];
-  
+  float right = [[NSNumber numberWithLong:_rightCount] floatValue];
+  float wrong = [[NSNumber numberWithLong:_wrongCount] floatValue];
+  float percentage = (right / (right + wrong)) * 100;
+  score = [NSString stringWithFormat:@"score: %li right, %li wrong ---- %ld%%", _rightCount, _wrongCount, (long)percentage];
+
   return score;
 }
+
 
 @end

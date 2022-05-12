@@ -16,8 +16,6 @@ int main(int argc, const char * argv[]) {
     
     BOOL (gameOn) = YES;
     ScoreKeeper *scoreCount = [[ScoreKeeper alloc]init];
-    long rightCount = [scoreCount rightCount];
-    long wrongCount = [scoreCount wrongCount];
   
     while (true) {
       AdditionQuestion *question = [[AdditionQuestion alloc]init];
@@ -32,14 +30,14 @@ int main(int argc, const char * argv[]) {
       } else {
         NSInteger userAns = [userInput intValue];
         if (userAns == [question answer]) {
-          rightCount += 1;
+          [scoreCount addRightCount];
           NSLog(@"Right!");
         } else {
-          wrongCount += 1;
+          [scoreCount addWrongCount];
           NSLog(@"Wrong!");
         }
       }
-      NSLog(@"%@", [scoreCount scoreTrack:rightCount andWrong:wrongCount]);
+      NSLog(@"%@", [scoreCount scoreTrack]);
     }
     
   }
