@@ -1,5 +1,5 @@
 //
-//  AdditionQuestion.h
+//  QuestionFactory.h
 //  Maths
 //
 //  Created by Esperanza on 2022-05-13.
@@ -10,10 +10,12 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface AdditionQuestion : Question
+@interface QuestionFactory : NSObject
+
+@property (nonatomic) NSArray* questionSubclassNames;
 
 - (instancetype)init;
-- (void) generateQuestion;
+- (Question *) generateRandomQuestion;
 
 @end
 

@@ -1,13 +1,13 @@
 //
-//  AdditionQuestion.m
+//  DivideQuestion.m
 //  Maths
 //
 //  Created by Esperanza on 2022-05-13.
 //
 
-#import "AdditionQuestion.h"
+#import "DivideQuestion.h"
 
-@implementation AdditionQuestion
+@implementation DivideQuestion
 
 - (instancetype)init
 {
@@ -19,9 +19,11 @@
 }
 
 - (void) generateQuestion{
-  NSString *expression = [NSString stringWithFormat:@"%ld + %ld ?", [super leftValue], [super rightValue]];
+  NSString *expression = [NSString stringWithFormat:@"%ld / %ld ?", [super leftValue], [super rightValue]];
   [super setQuestion:expression];
-  NSInteger result = [super leftValue] + [super rightValue];
+  NSInteger result = [super leftValue] / [super rightValue];
   [super setAnswer:result];
 }
+
+
 @end

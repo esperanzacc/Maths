@@ -1,5 +1,5 @@
 //
-//  AdditionQuestion.h
+//  DivideQuestion.h
 //  Maths
 //
 //  Created by Esperanza on 2022-05-13.
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface AdditionQuestion : Question
+@interface DivideQuestion : Question
 
 - (instancetype)init;
 - (void) generateQuestion;
